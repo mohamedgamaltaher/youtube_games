@@ -7,6 +7,7 @@ player_2_choice = 'o'
 game_draw = 'DRAW'
 
 # Define grid
+
 # We will use list comprehension to create 3 x 3 grid.
 
 grid = [cell for cell in range(9)]
@@ -24,9 +25,6 @@ def display_grid():
     print(f"{grid[3]}  {grid[4]}  {grid[5]}")
     print(f"{grid[6]}  {grid[7]}  {grid[8]}")
 
-
-# Lets call display_grid function
-display_grid()
 
 # Let's write a function that will check winning condition and
 # tie condition of a game
@@ -138,8 +136,22 @@ def main():
     # After updateing check the winning, loosing or draw condition
     # by calling game function
     game()
+    display_grid()
 
     player_2_location = int(
         input("Player [o] Enter your choice from ( 0 to 8)"))
     # pass player 2 location choice using update_grid function
-    update_grid(player_2_choice, player_1_location)
+    update_grid(player_2_choice, player_2_location)
+    game()
+    display_grid()
+
+
+# Our main function is also complete
+# Now time to run the main function inside while loop continiously.
+
+
+# Let's display grid initially
+display_grid()
+
+while True:
+    main()
